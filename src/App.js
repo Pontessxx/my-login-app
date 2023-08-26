@@ -9,12 +9,14 @@ function App() {
       // Inverta o estado atual quando o botão do Navbar for clicado
         setPopupActive(!isPopupActive);
     };
-  
+    const handleCloseButtonClick = () => {
+        setPopupActive(false); // Fechar o popup quando o botão de fechar é clicado
+      }
     return (
       <div className="App">
         <Navbar onClickButton={handleNavbarButtonClick} />
         <div className={`wrapper ${isPopupActive ? 'active-popup' : ''}`}>
-            <span className="icon-close"><ion-icon name="close"></ion-icon></span>
+            <span className="icon-close"  onClick={handleCloseButtonClick}><ion-icon name="close"></ion-icon></span>
             <div className="form-box login">
                 <h2>Login</h2>
                 <form>
