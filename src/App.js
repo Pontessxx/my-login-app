@@ -1,17 +1,19 @@
 import './App.css';
 import Navbar from './Navbar';
-
+import {ReactComponentElement, useState} from 'react';
 function App() {
-    
+    const [isPopupActive, setPopupActive] = useState(false);
     //console.log('App.js está sendo renderizado.'); // Adicione isso para verificar se o App.js está sendo chamado
     const handleNavbarButtonClick = () => {
-      //console.log('Botão do Navbar clicado no componente pai (App.js)');
+      console.log('Botão do Navbar clicado no componente pai (App.js)');
+      // Inverta o estado atual quando o botão do Navbar for clicado
+        setPopupActive(!isPopupActive);
     };
   
     return (
       <div className="App">
         <Navbar onClickButton={handleNavbarButtonClick} />
-        <div className='wrapper'>
+        <div className={`wrapper ${isPopupActive ? 'active-popup' : ''}`}>
             <span className="icon-close"><ion-icon name="close"></ion-icon></span>
             <div className="form-box login">
                 <h2>Login</h2>
