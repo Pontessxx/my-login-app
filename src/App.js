@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    console.log('App.js está sendo renderizado.'); // Adicione isso para verificar se o App.js está sendo chamado
+    const handleNavbarButtonClick = () => {
+      console.log('Botão do Navbar clicado no componente pai (App.js)');
+    };
+  
+    return (
+      <div className="App">
+        <Navbar onClickButton={handleNavbarButtonClick} />
+      </div>
+    );
+  }
+  
 
 export default App;
