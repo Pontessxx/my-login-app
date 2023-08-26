@@ -3,8 +3,8 @@ import './Navbar.css';
 
 function Navbar(props) {
   const handleButtonClick = () => {
-    props.onClickButton(); // Certifique-se de que essa linha está descomentada
-    console.log('NAVBAR.js console log')
+    props.onClickButton(); ; // Chama a função passada como prop do componente pai
+    //console.log('NAVBAR.js console log')
   };
 
   return (
